@@ -10,6 +10,7 @@ shadow.innerHTML = `
         @import "components/p.css";
     </style>
 `;
+myElement.innerHTML = null;//not to duplicate the content placed into shadow-root
 
 /*
 shadow.getElementById('p-elem');
