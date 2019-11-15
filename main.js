@@ -1,19 +1,14 @@
-/*
-  1. Using a normal HTML element, but attaching a Shadow DOM
-*/
+/* Attaching a Shadow DOM */
 let myElement = document.querySelector('.my-element');
 let shadow = myElement.attachShadow({
-  mode: 'closed'
+  mode: 'open' //shadow variable can be accessed from the parent DOM element. If closed, it can't be accessed
 });
 shadow.innerHTML = `
-  <style>
-    @import "components/p.css";
-  </style>
+    ${myElement.innerHTML}
 
-  <p id="p-elem" class="green-p">Element with Shadow DOM</p>
-  <script>
-    alert('Hello from Shadow');
-  </script>
+    <style>
+        @import "components/p.css";
+    </style>
 `;
 
 /*
